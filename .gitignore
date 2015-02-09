@@ -1,29 +1,33 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include<stdio.h>
 
-# Precompiled Headers
-*.gch
-*.pch
+int main()
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+{
+    FILE*assign4;
+    int number,k;
+    int total_div_by_ten=0;
+    
+    printf("enter value for k\n");
+    scanf("%d",&k);
+    
+    assign4=fopen("assign4.txt","r");
+    
+    
+    while(feof(assign4)<=0)
+    {
+        fscanf(assign4,"%d",&number);
+        if(number%k==0)
+        
+          total_div_by_ten=total_div_by_ten+1;
+          
+          
+    }
+    printf("%d numbers divible by %d\n",total_div_by_ten,k);
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+    
+    fclose(assign4);
+    system("pause");
+    return(0);
+}   
+               
